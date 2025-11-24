@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominique – Diseñadora</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (para los <i class="bi ...">) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	
+	 <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+		#navfijo {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background: #111;
+			z-index: 9999; /* mucho más arriba que cualquier slider */
+		}
+		section {
+			scroll-margin-top: 75px; /* ajusta a la altura real de tu nav */
+}
+		
+        /* HERO principal */
+        .hero {
+            height: 98vh;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+        /* Overlays portafolio */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            color: white;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .portfolio-item {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Colores personalizados */
+        .bg-silver {
+            background-color: silver;
+        }
+
+        .bg-soft {
+            background-color: #F4F4F4;
+        }
+
+        /* HR de secciones */
+        .section-divider {
+            border: 2px solid #000;
+            width: 5%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<section id="inicio">
+<div id="navfijo">
+<!-- Deco inicio -->
+<div class="container-fluid p-0">
+    <div class="w-100 bg-black" style="height: 5px;"></div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg p-3 bg-white shadow-sm">
+  <div class="container-fluid">
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold mx-5" href="#" style="letter-spacing:3px;">DOMI</a>
+
+    <!-- Botón de navegación para móviles -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre mí</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portafolio">Portafolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <!-- Buscador -->
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+	
+</div>
+
+<!-- HERO -->
+<div class="hero position-relative overflow-hidden">
+
+    <!-- CARRUSEL: solo las imágenes -->
+    <div id="heroSlider" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+        <div class="carousel-inner h-100">
+
+            <div class="carousel-item active h-100">
+                <img src="assets/img/banner.jpg"
+                     class="w-100 h-100 object-fit-cover"
+                     style="filter: brightness(60%);" alt="">
+            </div>
+
+            <div class="carousel-item h-100">
+                <img src="assets/img/banner 2.jpg"
+                     class="w-100 h-100 object-fit-cover"
+                     style="filter: brightness(60%);" alt="">
+            </div>
+
+        </div>
+
+        <!-- Flechas -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- TEXTO SOBRE EL HERO (fuera del carrusel) -->
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white"
+         style="z-index: 10;">
+        <h1 class="mb-3">Construyamos la imagen de tu negocio a través de la magia del diseño!</h1>
+        <a href="#contacto" class="btn btn-light rounded-0">HABLEMOS</a>
+    </div>
+
+</div>
+	
+</section>
+	
+<!-- sobre mí -->
+<section id="sobremi">
+  <div class="container-fluid p-0 m-0 pt-5">
+    <div class="d-flex flex-column align-items-center mb-5">
+      <h4 class="mb-3">Sobre mí</h4>
+		<hr class="section-divider">
+      <p class="text-center w-75 mt-4">
+        Soy una diseñadora gráfica con experiencia en diseño editorial, de marca y web. 
+        Mi enfoque está en crear soluciones visuales coherentes que comuniquen claramente 
+        los valores de cada proyecto, conectando con los usuarios de manera efectiva.
+      </p>
+      <p class="text-center w-75">
+        También disfruto de la ilustración y la animación, aplicándolas en mis proyectos 
+        para agregar dinamismo y originalidad. Siempre busco crear un impacto visual duradero.
+      </p>
+    </div>
+  </div>
+
+  <!-- Softwares -->
+  <div class="row mb-4 px-5">
+    <div class="col-12">
+      <h5 class="text-center mb-4">Softwares</h5>
+    </div>
+
+    <div class="col-12 py-3">
+      <div class="row g-3 justify-content-center">
+
+        <!-- Repetición de iconos -->
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/001-dreamweaver.png" class="img-fluid" alt="Dreamweaver">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/002-animar.png" class="img-fluid" alt="Animar">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/003-experiencia.png" class="img-fluid" alt="Experiencia">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/004-ilustrador.png" class="img-fluid" alt="Ilustrador">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/005-photoshop.png" class="img-fluid" alt="Photoshop">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/006-despues-de-los-efectos.png" class="img-fluid" alt="After Effects">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/007-indesign 2.png" class="img-fluid" alt="InDesign">
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+          <img src="assets/img/png/008-shopify.png" class="img-fluid" alt="Shopify">
+        </div>
+
+      </div>
+  </div>
+
+  <!-- Behance -->
+  <div class="row text-center">
+    <div class="col-12">
+      <p>Puedes ver mis proyectos en Behance:</p>
+      <a href="https://behance.com/" class="btn btn-primary" target="_blank">Visitar mi Behance</a>
+    </div>
+  </div>
+	</div>
+</section>
+
+<!-- Portafolio -->
+<section id="portafolio">
+ <div class="container-fluid p-0 m-0 pt-5">
+  <div class="d-flex flex-column align-items-center mb-5">
+    <h4 class="text-center">Explora mi portafolio</h4>
+    <hr class="section-divider">
+    <p class="text-center w-75 mt-4">
+      Descubre cómo el diseño puede transformar marcas en experiencias únicas y memorables.
+      Cada proyecto refleja una cuidadosa combinación de creatividad y estrategia visual.
+    </p>
+    <a href="#" class="btn btn-outline-dark rounded-0 w-25">Ver más</a>
+  </div>
+
+  <div class="row g-0">
+    <div class="col-12 col-md-4 position-relative">
+      <a href="#" class="d-block position-relative portfolio-item">
+        <img src="assets/img/p-1.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Proyecto 1">
+        <div class="overlay">
+          <div class="overlay-content text-center">
+            <div class="project-details text-14px">
+              <p><i class="bi bi-person"></i> <strong>Cliente:</strong> Proyeto 1</p>
+              <p><i class="bi bi-calendar-check"></i> <strong>Fecha de inicio:</strong> Enero 2023</p>
+              <p><i class="bi bi-card-text"></i> <strong>Descripción:</strong></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae fermentum arcu.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-md-8">
+      <div class="row g-0">
+        <div class="col-6 position-relative">
+          <a href="#" class="d-block position-relative portfolio-item">
+            <img src="assets/img/p-2.jpg" class="img-fluid w-100 object-fit-cover" alt="Proyecto 2">
+            <div class="overlay">
+              <div class="overlay-content text-center">
+                <div class="project-details text-14px">
+                  <p><i class="bi bi-person"></i> <strong>Cliente:</strong> Proyeto 1</p>
+                  <p><i class="bi bi-calendar-check"></i> <strong>Fecha de inicio:</strong> Enero 2023</p>
+                  <p><i class="bi bi-card-text"></i> <strong>Descripción:</strong></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae fermentum arcu.</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 position-relative">
+          <a href="#" class="d-block position-relative portfolio-item">
+            <img src="assets/img/p-3.jpg" class="img-fluid w-100 object-fit-cover" alt="Proyecto 3">
+            <div class="overlay">
+              <div class="overlay-content text-center">
+                <div class="project-details text-14px">
+                  <p><i class="bi bi-person"></i> <strong>Cliente:</strong> Proyeto 1</p>
+                  <p><i class="bi bi-calendar-check"></i> <strong>Fecha de inicio:</strong> Enero 2023</p>
+                  <p><i class="bi bi-card-text"></i> <strong>Descripción:</strong></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae fermentum arcu.</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 position-relative">
+          <a href="#" class="d-block position-relative portfolio-item">
+            <img src="assets/img/p-4.jpg" class="img-fluid w-100 object-fit-cover" alt="Proyecto 4">
+            <div class="overlay">
+              <div class="overlay-content text-center">
+                <div class="project-details text-14px">
+                  <p><i class="bi bi-person"></i> <strong>Cliente:</strong> Proyeto 1</p>
+                  <p><i class="bi bi-calendar-check"></i> <strong>Fecha de inicio:</strong> Enero 2023</p>
+                  <p><i class="bi bi-card-text"></i> <strong>Descripción:</strong></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae fermentum arcu.</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 position-relative">
+          <a href="#" class="d-block position-relative portfolio-item">
+            <img src="assets/img/p-5.jpg" class="img-fluid w-100 object-fit-cover" alt="Proyecto 5">
+            <div class="overlay">
+              <div class="overlay-content text-center">
+                <div class="project-details text-14px">
+                  <p><i class="bi bi-person"></i> <strong>Cliente:</strong> Proyeto 1</p>
+                  <p><i class="bi bi-calendar-check"></i> <strong>Fecha de inicio:</strong> Enero 2023</p>
+                  <p><i class="bi bi-card-text"></i> <strong>Descripción:</strong></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae fermentum arcu.</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-white py-5 bg-silver">
+      <h1 class="text-center mb-4">¿Preparado/a para elevar tu marca?</h1>
+      <p class="text-center mb-2">Hagamos la marca de tus sueños una realidad</p>
+      <p class="text-center">contacto_domiriquelme@gmail.com</p>
+    </div>
+
+    <div class="col-md-6 d-flex flex-column justify-content-center py-5 bg-soft">
+
+      <!-- FORMULARIO CON ID -->
+      <form id="contactForm" class="p-4">
+
+        <div class="form-group mb-3">
+          <label for="nombre">Nombre *</label>
+          <input type="text" class="form-control rounded-0 bg-soft" id="nombre" placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="email">Email *</label>
+            <input type="email" class="form-control rounded-0 bg-soft" id="email" placeholder="Ingresa tu email">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" class="form-control rounded-0 bg-soft" id="telefono" placeholder="Introduce tu número de teléfono">
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="negocio">Cuéntame sobre tu negocio</label>
+          <textarea class="form-control rounded-0 bg-soft" id="negocio" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <div class="text-end">
+          <button id="enviar_formulario" type="submit" class="btn btn-dark px-5 rounded-0">Enviar</button>
+        </div>
+
+      </form>
+
+      <!-- DIV PARA MENSAJES -->
+      <div id="message" class="mt-3"></div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<div class="container-fluid px-5 pt-5 col-12">
+  <footer>
+    <div class="row">
+      <div class="col-12 col-md-4 mb-3">
+        <h5>Información</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a href="#" class="nav-link p-0 text-body-secondary">
+              <i class="bi bi-whatsapp"></i> +56 9 1234 5678
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="#" class="nav-link p-0 text-body-secondary">
+              <i class="bi bi-geo-alt-fill"></i> Los Ángeles, Chile
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4 mb-3">
+        <h5>Links</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sobre mí</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Noticias</a></li>
+          <li class="nav-item mb-2"><a href="contacto.html" class="nav-link p-0 text-body-secondary">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-4 mb-3 pb-5">
+        <form>
+          <h5>Suscríbete a nuestro boletín</h5>
+          <p>Resumen mensual de nuestras novedades y consejos.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Correo electrónico</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Correo electrónico">
+            <button class="btn btn-outline-dark rounded-0" type="button">Suscribir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 border-top">
+      <p>© 2025. Todos los derechos reservados.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS -->
+<script src="assets/js/index.js"></script>
+
+</body>
+</html>
